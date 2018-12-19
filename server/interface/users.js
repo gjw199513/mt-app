@@ -142,7 +142,6 @@ router.post('/verify', async (ctx, next) => {
       pass: Email.smtp.pass
     }
   })
-  console.log(ctx.request.body.username)
   let ko = {
     code: Email.smtp.code(),
     expire: Email.smtp.expire(),

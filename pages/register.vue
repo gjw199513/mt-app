@@ -135,7 +135,6 @@ export default {
     sendMsg: function() {
 
       const self = this
-      console.log(this)
       let namePass
       let emailPass
       if (self.timerid) {
