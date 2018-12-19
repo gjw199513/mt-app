@@ -17,7 +17,6 @@
             placeholder="搜索商家或地点"
             @focus="focus"
             @blur="blur"
-            @input="input"
           />
           <button class="el-button el-button--primary"><i class="el-icon-search"/></button>
           <dl
