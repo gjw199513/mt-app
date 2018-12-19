@@ -28,7 +28,7 @@
             <dd
               v-for="(item, index) in hotPlace.slice(0, 5)"
               :key="index">
-              {{ item.name }}
+              {{ item }}
             </dd>
           </dl>
           <dl
@@ -37,7 +37,7 @@
             <dd
               v-for="(item,index) in searchList"
               :key="index"
-            >{{ item.name }}
+            >{{ item }}
             </dd>
           </dl>
         </div>
