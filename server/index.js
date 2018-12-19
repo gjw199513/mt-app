@@ -8,8 +8,8 @@ import dbConfig from './dbs/config'
 import passport from './interface/utils/passport'
 import users from './interface/users'
 import cors from 'koa2-cors'
-// import geo from './interface/geo'
-// import search from './interface/search'
+import geo from './interface/geo'
+import search from './interface/search'
 // import categroy from './interface/categroy'
 // import cart from './interface/cart'
 
@@ -28,14 +28,16 @@ app.use(bodyParser({
 }))
 app.use(json())
 // post请求变成options 跨域
-app.use(cors({
-  origin: '*',
-  exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
-  maxAge: 5,
-  credentials: true,
-  allowMethods: ['GET', 'POST', 'DELETE'], //设置允许的HTTP请求类型
-  allowHeaders: ['Content-Type', 'Authorization', 'Accept']
-}))
+app.use(cors(
+//   {
+//   origin: '*',
+//   exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+//   maxAge: 5,
+//   credentials: true,
+//   allowMethods: ['GET', 'POST', 'DELETE'], //设置允许的HTTP请求类型
+//   allowHeaders: ['Content-Type', 'Authorization', 'Accept']
+// }
+))
 
 mongoose.connect(dbConfig.dbs, {
   useNewUrlParser: true
@@ -57,8 +59,8 @@ async function start() {
     await builder.build()
   }
   app.use(users.routes()).use(users.allowedMethods())
-  // app.use(geo.routes()).use(geo.allowedMethods())
-  // app.use(search.routes()).use(search.allowedMethods())
+  app.use(geo.routes()).use(geo.allowedMethods())
+  app.use(search.routes()).use(search.allowedMethods())
   // app.use(categroy.routes()).use(categroy.allowedMethods())
   // app.use(cart.routes()).use(cart.allowedMethods())
   app.use(ctx => {
