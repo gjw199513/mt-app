@@ -103,6 +103,7 @@ export default {
         })
         if(status === 200 && count > 0) {
           let r = pois.filter((item)=>item.photos.length).map((item, index)=>{
+            // 数据映射
             return {
               title: item.name,
               pos: item.type.split(';')[0],
