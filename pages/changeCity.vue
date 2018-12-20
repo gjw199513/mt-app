@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import iSelect from '../components/changeCity/iselect'
-import Hot from '../components/changeCity/hot'
-import Category from '../components/changeCity/category'
+import iSelect from '@/components/changeCity/iselect'
+import Hot from '@/components/changeCity/hot'
+import Category from '@/components/changeCity/category'
 
 export default {
   name: 'ChangeCity',
