@@ -29,14 +29,14 @@ app.use(bodyParser({
 app.use(json())
 // post请求变成options 跨域
 app.use(cors(
-//   {
-//   origin: '*',
-//   exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
-//   maxAge: 5,
-//   credentials: true,
-//   allowMethods: ['GET', 'POST', 'DELETE'], //设置允许的HTTP请求类型
-//   allowHeaders: ['Content-Type', 'Authorization', 'Accept']
-// }
+  {
+  origin: '*',
+  exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+  maxAge: 5,
+  credentials: true,
+  allowMethods: ['GET', 'POST', 'DELETE'], //设置允许的HTTP请求类型
+  allowHeaders: ['Content-Type', 'Authorization', 'Accept']
+}
 ))
 
 mongoose.connect(dbConfig.dbs, {
